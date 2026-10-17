@@ -1,0 +1,14 @@
+# Drug Me Up: static HTML + one serverless function; no credentials here.
+[build]
+  publish = "public"
+  command = "echo 'Static site - no build required'"
+
+[functions]
+  directory = "netlify/functions"
+
+# Security headers do not change the site's visual design.
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store, private"
+    X-Content-Type-Options = "nosniff"
