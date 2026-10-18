@@ -41,7 +41,7 @@
 //     25 s timeout. Google's real error is deliberately hidden; check Netlify function logs
 //     (add a temporary console.error(upstream.status) in the !upstream.ok branch).
 // ══════════════════════════════════════════════════════════════════
-// Drug Me Up / MedBot — Netlify server-side Gemini proxy.
+// Pill Patrol / MedBot — Netlify server-side Gemini proxy.
 // No actual API credentials may be committed here or anywhere inside public/.
 // Deployment: add GEMINI_API_KEY in Netlify Project configuration > Environment variables.
 // Optional: GEMINI_ENABLED=false pauses all Gemini calls without changing the HTML.
@@ -88,7 +88,7 @@ export default async function medbot(request) {
   // STEP 1: only POST is allowed. GET (e.g. someone visiting /api/medbot in a browser) gets 405.
   if (request.method !== 'POST') return json(405, {error:'Only POST requests are supported.'});
 
-  // The endpoint is intended for the Drug Me Up page at its own origin.
+  // The endpoint is intended for the Pill Patrol page at its own origin.
   // These headers deter browser cross-site use; they are NOT authentication,
   // because a scripted client can spoof Origin headers.
   // STEPS 2-3: browser-side cross-site protection.
