@@ -1,12 +1,26 @@
+# netlify.toml: Netlify's project configuration, read on every deploy.
+# Keep credentials out of this file; it is committed to Git and visible to anyone with repo access.
 # Drug Me Up: static HTML + one serverless function; no credentials here.
+# [build] tells Netlify how to produce the site.
+#   publish  the folder that becomes the public website. ONLY files inside public/ are served,
+#            so medbot.mjs, netlify.toml and README.md are never downloadable by visitors.
+#   command  nothing to compile; echo is a placeholder because Netlify expects a build command.
 [build]
   publish = "public"
   command = "echo 'Static site - no build required'"
 
+# [functions] tells Netlify where serverless functions live. Every file in this folder is
+# bundled and deployed; medbot.mjs becomes the /api/medbot endpoint (its path comes from
+# `export const config` inside the file).
 [functions]
   directory = "netlify/functions"
 
 # Security headers do not change the site's visual design.
+# [[headers]] adds HTTP response headers to matching URLs ([[...]] means "one of a list").
+# This block targets /api/*, i.e. the MedBot function responses:
+#   Cache-Control 'no-store, private'  never cache (answers may reflect personal medical questions)
+#   X-Content-Type-Options 'nosniff'   browsers must trust the declared content type
+# (medbot.mjs sets the same headers itself; this is a second layer.)
 [[headers]]
   for = "/api/*"
   [headers.values]
