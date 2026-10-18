@@ -54,3 +54,8 @@ The /api/medbot Netlify function *will not run when opening public/index.html as
 - Netlify secret variables: https://docs.netlify.com/build/environment-variables/secrets-controller/
 - Netlify function rate-limiting: https://docs.netlify.com/manage/security/secure-access-to-sites/rate-limiting/
 - Gemini API key security and rotation: https://ai.google.dev/gemini-api/docs/api-key
+
+
+## More Information
+
+This project was developed for the IKU Womxn In Stem Hackathon.
