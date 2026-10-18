@@ -1,6 +1,6 @@
 # netlify.toml: Netlify's project configuration, read on every deploy.
 # Keep credentials out of this file; it is committed to Git and visible to anyone with repo access.
-# Drug Me Up: static HTML + one serverless function; no credentials here.
+# Pill Patrol: static HTML + one serverless function; no credentials here.
 # [build] tells Netlify how to produce the site.
 #   publish  the folder that becomes the public website. ONLY files inside public/ are served,
 #            so medbot.mjs, netlify.toml and README.md are never downloadable by visitors.
