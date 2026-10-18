@@ -59,4 +59,5 @@ The /api/medbot Netlify function *will not run when opening public/index.html as
 ## More Information
 
 This project was developed for the IKU Womxn In STEM Hackathon 2026.
+
 Collaborators: Charlie McGown, Isobel Clothier, Laura Santos Casas, Roberta De Filippis.
