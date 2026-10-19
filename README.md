@@ -7,7 +7,7 @@
 
 ## Framework
 
-Pill Patrol was built with the help of AI tools. *Claude* (Anthropic), *ChatGPT* (OpenAI) and *Gemini* (Google) were used to generate the code for public/index.html. They were also used to create the example dataset: 17 sample medications built into the app, each with a typical dosing interval, food and alcohol guidance, and a list of known interaction pairs.
+Pill Patrol was built with the help of AI tools. *Claude* (Anthropic), *ChatGPT* (OpenAI) and *Gemini* (Google) were used to generate the code for public/index.html. They were also used to create the example dataset: 17 sample medications built into the app, each with a typical dosing interval, food and alcohol guidance, and a list of known interaction pairs. 
 
 *FDA medication data.* Besides the sample medications, the app includes real drug data from the US Food and Drug Administration. We downloaded files 1 and 2 (of 14) of the openFDA drug label data from the FDA download page: https://open.fda.gov/data/downloads/. From each drug label we kept only what the app uses (generic and brand names, active substances, dosage text and interaction text) and embedded it in public/index.html as additional medications. This adds 4,904 drug entries to the search, 1,291 of them with interaction text, and means the page does not need a connection to the FDA while it runs. Files 3 to 14 are not included, so some drugs are missing.
 
